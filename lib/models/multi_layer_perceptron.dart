@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:neural_network_skeleton/models/layer.dart';
+import 'package:neural_network_skeleton/models/perceptron_layer.dart';
 
 class MultiLayerPerceptron extends Equatable {
   const MultiLayerPerceptron({

@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:neural_network_skeleton/models/perceptron.dart';
 
-class Layer extends Equatable {
-  const Layer({
+class PerceptronLayer extends Equatable {
+  const PerceptronLayer({
     required this.perceptrons,
   });
 
@@ -12,4 +12,8 @@ class Layer extends Equatable {
   List<Object?> get props => [
         perceptrons,
       ];
+}
+
+extension LayerExtension on PerceptronLayer {
+  int get numPerceptrons => perceptrons.length;
 }

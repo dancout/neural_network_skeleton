@@ -1,21 +1,21 @@
 import 'package:equatable/equatable.dart';
-import 'package:neural_network_skeleton/models/input.dart';
+import 'package:neural_network_skeleton/models/weight_web.dart';
 
 class Perceptron extends Equatable {
   const Perceptron({
     required this.bias,
     required this.threshold,
-    required this.inputs,
+    required this.weights,
   });
 
   final double bias;
   final double threshold;
-  final List<Input> inputs;
+  final List<WeightWeb> weights;
 
   @override
   List<Object?> get props => [
         bias,
         threshold,
-        inputs,
+        weights,
       ];
 }

@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 class WeightWeb extends Equatable {
   WeightWeb({
     required List<double> weights,
-    this.normalizeWeights = true,
+    this.normalizeWeights = false,
   }) {
     _weights = List.from(weights);
 
@@ -21,6 +21,10 @@ class WeightWeb extends Equatable {
   List<double> get weights => _weights;
 
   late final List<double> _weights;
+
+  /// Whether to proportionately update weights so that all add up to 1.0.
+  ///
+  /// This is intended to be used with only positive weight values.
   final bool normalizeWeights;
 
   @override

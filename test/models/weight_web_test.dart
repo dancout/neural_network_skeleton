@@ -3,12 +3,12 @@ import 'package:neural_network_skeleton/models/weight_web.dart';
 
 void main() {
   group('normalizeWeights', () {
-    test('defaults to true', () async {
+    test('defaults to false', () async {
       final testObject = WeightWeb(
         weights: const [0.1, 0.1],
       );
 
-      expect(testObject.normalizeWeights, isTrue);
+      expect(testObject.normalizeWeights, isFalse);
     });
 
     test('when true ensures all weights add up to 1.0', () async {
@@ -33,7 +33,10 @@ void main() {
       for (int i = 0; i < weightsList.length; i++) {
         final weights = weightsList[i];
         final normalizedWeights = normalizeWeightsList[i];
-        final testObject = WeightWeb(weights: weights);
+        final testObject = WeightWeb(
+          weights: weights,
+          normalizeWeights: true,
+        );
 
         expect(testObject.weights, normalizedWeights);
       }

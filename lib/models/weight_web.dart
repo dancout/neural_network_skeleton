@@ -20,8 +20,6 @@ class WeightWeb extends Equatable {
 
   List<double> get weights => _weights;
 
-  // TODO: In the future we could consider making a special class called
-  /// "Weight" that ensures the value is between 0 and 1.
   late final List<double> _weights;
   final bool normalizeWeights;
 

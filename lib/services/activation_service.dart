@@ -12,8 +12,6 @@ class ActivationService {
 
   double activation({
     required Perceptron perceptron,
-    // TODO: Could we create an object to house all these inputs, similar to
-    /// WeightWeb? Something like InputWeb?
     required List<double> layerInputs,
   }) {
     assert(perceptron.weightWeb.weights.length == layerInputs.length);

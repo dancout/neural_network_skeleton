@@ -28,7 +28,6 @@ class ActivationService {
     final weightedInputsSum =
         weightedInputs.reduce((value, element) => value + element);
 
-    // TODO: Should the normalization happen before or after this check?
     final weightedInputSumAndBias = normalizationService.normalizeValue(
       value: weightedInputsSum + perceptron.bias,
     );

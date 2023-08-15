@@ -1,18 +1,33 @@
 import 'package:equatable/equatable.dart';
 
 class WeightWeb extends Equatable {
-  // TODO: Consider writing a test/assertion around the weights adding up to 1
+  WeightWeb({
+    required List<double> weights,
+    this.normalizeWeights = true,
+  }) {
+    _weights = List.from(weights);
 
-  const WeightWeb({
-    required this.weights,
-  });
+    if (normalizeWeights) {
+      final sum = _weights.reduce((value, element) => value + element);
+
+      final factor = 1.0 / sum;
+
+      for (int i = 0; i < _weights.length; i++) {
+        _weights[i] *= factor;
+      }
+    }
+  }
+
+  List<double> get weights => _weights;
 
   // TODO: In the future we could consider making a special class called
   /// "Weight" that ensures the value is between 0 and 1.
-  final List<double> weights;
+  late final List<double> _weights;
+  final bool normalizeWeights;
 
   @override
   List<Object?> get props => [
-        weights,
+        _weights,
+        normalizeWeights,
       ];
 }

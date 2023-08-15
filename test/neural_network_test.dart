@@ -9,14 +9,14 @@ import 'package:neural_network_skeleton/src/neural_network.dart';
 import 'mocks.dart';
 
 void main() {
-  const layers = [
+  final layers = [
     PerceptronLayer(
       perceptrons: [
         Perceptron(
           bias: 0.1,
           threshold: 0.1,
           weightWeb: WeightWeb(
-            weights: [0.1, 0.1, 0.1],
+            weights: const [0.1, 0.1, 0.1],
           ),
         )
       ],

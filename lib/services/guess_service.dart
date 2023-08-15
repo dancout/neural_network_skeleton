@@ -7,9 +7,6 @@ class GuessService {
   }) : activationService = activationService ?? ActivationService();
   final ActivationService activationService;
 
-  // TODO: Should we make the output be of type <T> so that the user can specify
-  /// whatever they want?
-
   List<double> guess({
     required List<double> inputs,
     required List<PerceptronLayer> layers,

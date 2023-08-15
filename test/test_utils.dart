@@ -5,11 +5,11 @@ import 'package:neural_network_skeleton/models/weight_web.dart';
 class TestUtils {
   static void registerFallbacks() {
     registerFallbackValue(
-      const Perceptron(
+      Perceptron(
         bias: 0.1,
         threshold: 0.1,
         weightWeb: WeightWeb(
-          weights: [0.1],
+          weights: const [0.1],
         ),
       ),
     );

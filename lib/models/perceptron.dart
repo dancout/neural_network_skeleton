@@ -5,17 +5,17 @@ class Perceptron extends Equatable {
   const Perceptron({
     required this.bias,
     required this.threshold,
-    required this.weights,
+    required this.weightWeb,
   });
 
   final double bias;
   final double threshold;
-  final List<WeightWeb> weights;
+  final WeightWeb weightWeb;
 
   @override
   List<Object?> get props => [
         bias,
         threshold,
-        weights,
+        weightWeb,
       ];
 }

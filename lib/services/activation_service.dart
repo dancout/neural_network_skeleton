@@ -1,12 +1,12 @@
 import 'package:neural_network_skeleton/models/perceptron.dart';
+import 'package:neural_network_skeleton/services/normalization/clamping_normalization_service.dart';
 import 'package:neural_network_skeleton/services/normalization/normalization_service.dart';
-import 'package:neural_network_skeleton/services/normalization/sigmoid_normalization_service.dart';
 
 class ActivationService {
   ActivationService({
     NormalizationService? normalizationService,
   }) : normalizationService =
-            normalizationService ?? SigmoidNormalizationService();
+            normalizationService ?? ClampingNormalizationService();
 
   final NormalizationService normalizationService;
 
@@ -30,7 +30,7 @@ class ActivationService {
       value: weightedInputsSum + perceptron.bias,
     );
 
-    if (weightedInputSumAndBias > perceptron.threshold) {
+    if (weightedInputSumAndBias >= perceptron.threshold) {
       return weightedInputSumAndBias;
     } else {
       return 0.0;

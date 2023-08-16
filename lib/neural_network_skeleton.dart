@@ -15,46 +15,46 @@ class ExampleNeuralNetwork {
   List<double> run({
     required List<double> inputs,
   }) {
-    final orPerceptron = Perceptron(
+    const orPerceptron = Perceptron(
       bias: 0.0,
       threshold: 1.0,
-      weightWeb: WeightWeb(weights: const [1.0, 1.0]),
+      weightWeb: WeightWeb(weights: [1.0, 1.0]),
     );
 
-    final notPerceptron = Perceptron(
+    const notPerceptron = Perceptron(
       bias: 1.0,
       threshold: 0.0,
-      weightWeb: WeightWeb(weights: const [0.0, -1.0]),
+      weightWeb: WeightWeb(weights: [0.0, -1.0]),
     );
 
-    final andPerceptron = Perceptron(
+    const andPerceptron = Perceptron(
       bias: 0.0,
       threshold: 1.0,
       weightWeb: WeightWeb(
-        weights: const [0.5, 0.5],
+        weights: [0.5, 0.5],
       ),
     );
 
-    final passthroughPerceptron = Perceptron(
+    const passthroughPerceptron = Perceptron(
       bias: 0.0,
       threshold: 0.0, // Sigmoid prevents 1.0
-      weightWeb: WeightWeb(weights: const [1.0, 0.0]),
+      weightWeb: WeightWeb(weights: [1.0, 0.0]),
     );
 
     final layers = [
-      PerceptronLayer(
+      const PerceptronLayer(
         perceptrons: [
           orPerceptron,
           andPerceptron,
         ],
       ),
-      PerceptronLayer(
+      const PerceptronLayer(
         perceptrons: [
           passthroughPerceptron,
           notPerceptron,
         ],
       ),
-      PerceptronLayer(
+      const PerceptronLayer(
         perceptrons: [
           andPerceptron,
         ],
@@ -70,14 +70,14 @@ class ExampleNeuralNetwork {
   List<double> orTest({
     required List<double> inputs,
   }) {
-    final orPerceptron = Perceptron(
+    const orPerceptron = Perceptron(
       bias: 0.0,
       threshold: 1.0,
-      weightWeb: WeightWeb(weights: const [1.0, 1.0]),
+      weightWeb: WeightWeb(weights: [1.0, 1.0]),
     );
 
     final layers = [
-      PerceptronLayer(
+      const PerceptronLayer(
         perceptrons: [
           orPerceptron,
         ],
@@ -93,16 +93,16 @@ class ExampleNeuralNetwork {
   List<double> andTest({
     required List<double> inputs,
   }) {
-    final andPerceptron = Perceptron(
+    const andPerceptron = Perceptron(
       bias: 0.0,
       threshold: 1.0,
       weightWeb: WeightWeb(
-        weights: const [0.5, 0.5],
+        weights: [0.5, 0.5],
       ),
     );
 
     final layers = [
-      PerceptronLayer(
+      const PerceptronLayer(
         perceptrons: [
           andPerceptron,
         ],
@@ -118,13 +118,13 @@ class ExampleNeuralNetwork {
   List<double> passthroughTest({
     required List<double> inputs,
   }) {
-    final passthroughPerceptron = Perceptron(
+    const passthroughPerceptron = Perceptron(
       bias: 0.0,
       threshold: 0.0, // Sigmoid prevents 1.0
-      weightWeb: WeightWeb(weights: const [1.0, 0.0]),
+      weightWeb: WeightWeb(weights: [1.0, 0.0]),
     );
     final layers = [
-      PerceptronLayer(
+      const PerceptronLayer(
         perceptrons: [
           passthroughPerceptron,
         ],
@@ -140,14 +140,14 @@ class ExampleNeuralNetwork {
   List<double> notTest({
     required List<double> inputs,
   }) {
-    final notPerceptron = Perceptron(
+    const notPerceptron = Perceptron(
       bias: 1.0,
       threshold: 0.0,
-      weightWeb: WeightWeb(weights: const [0.0, -1.0]),
+      weightWeb: WeightWeb(weights: [0.0, -1.0]),
     );
 
     final layers = [
-      PerceptronLayer(
+      const PerceptronLayer(
         perceptrons: [
           notPerceptron,
         ],

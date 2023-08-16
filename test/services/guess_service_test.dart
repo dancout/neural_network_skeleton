@@ -28,11 +28,11 @@ void main() {
 
       for (var output in outputs) {
         const layerInputs = [0.1, 0.1, 0.1];
-        final perceptron = Perceptron(
+        const perceptron = Perceptron(
           bias: 0.1,
           threshold: 0.1,
           weightWeb: WeightWeb(
-            weights: const [0.1, 0.1, 0.1],
+            weights: [0.1, 0.1, 0.1],
           ),
         );
 
@@ -44,7 +44,7 @@ void main() {
         ).thenReturn(output);
 
         final List<PerceptronLayer> layers = [
-          PerceptronLayer(
+          const PerceptronLayer(
             perceptrons: [
               perceptron,
             ],
@@ -69,15 +69,15 @@ void main() {
         for (int i = 1; i < 10; i++) {
           const layerInputs = [0.1, 0.1, 0.1];
 
-          final perceptron = Perceptron(
+          const perceptron = Perceptron(
             bias: 0.1,
             threshold: 0.1,
             weightWeb: WeightWeb(
-              weights: const [0.1, 0.1, 0.1],
+              weights: [0.1, 0.1, 0.1],
             ),
           );
 
-          final perceptronLayer = PerceptronLayer(
+          const perceptronLayer = PerceptronLayer(
             perceptrons: [
               perceptron,
               perceptron,

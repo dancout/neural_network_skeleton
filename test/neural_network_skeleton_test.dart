@@ -56,13 +56,13 @@ void main() {
 
   group('NeuralNetwork', () {
     final layers = [
-      PerceptronLayer(
+      const PerceptronLayer(
         perceptrons: [
           Perceptron(
             bias: 0.1,
             threshold: 0.1,
             weightWeb: WeightWeb(
-              weights: const [0.1, 0.1, 0.1],
+              weights: [0.1, 0.1, 0.1],
             ),
           )
         ],

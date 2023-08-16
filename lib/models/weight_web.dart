@@ -3,6 +3,8 @@ import 'package:equatable/equatable.dart';
 class WeightWeb extends Equatable {
   WeightWeb({
     required List<double> weights,
+    // TODO: Consider removing this, or porting it to a service class so that
+    /// it's more customizable.
     this.normalizeWeights = false,
   }) {
     _weights = List.from(weights);

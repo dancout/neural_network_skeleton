@@ -165,16 +165,23 @@ class ExampleNeuralNetwork {
 class NeuralNetwork extends Equatable {
   NeuralNetwork({
     required this.layers,
+
+    /// Used to generate a guess output for this [NeuralNetwork].
     GuessService? guessService,
-  }) : guessService = guessService ?? GuessService();
+  }) : _guessService = guessService ?? GuessService();
 
+  /// The collection of [PerceptronLayers] that make up this [NeuralNetwork].
   final List<PerceptronLayer> layers;
-  final GuessService guessService;
+  final GuessService _guessService;
 
+  /// Generates the outputs for this [NeuralNetwork] based on the given
+  /// [inputs].
+  ///
+  /// The [GuessService] is used for this calculation.
   List<double> guess({
     required List<double> inputs,
   }) {
-    return guessService.guess(
+    return _guessService.guess(
       inputs: inputs,
       layers: layers,
     );
@@ -183,6 +190,6 @@ class NeuralNetwork extends Equatable {
   @override
   List<Object?> get props => [
         layers,
-        guessService,
+        _guessService,
       ];
 }

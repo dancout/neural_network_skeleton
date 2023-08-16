@@ -1,14 +1,14 @@
 import 'package:neural_network_skeleton/models/perceptron.dart';
-import 'package:neural_network_skeleton/services/normalization/clamping_normalization_service.dart';
-import 'package:neural_network_skeleton/services/normalization/normalization_service.dart';
+import 'package:neural_network_skeleton/services/output_normalization/clamping_output_normalization_service.dart';
+import 'package:neural_network_skeleton/services/output_normalization/output_normalization_service.dart';
 
 class ActivationService {
   ActivationService({
-    NormalizationService? normalizationService,
+    OutputNormalizationService? normalizationService,
   }) : normalizationService =
-            normalizationService ?? ClampingNormalizationService();
+            normalizationService ?? ClampingOutputNormalizationService();
 
-  final NormalizationService normalizationService;
+  final OutputNormalizationService normalizationService;
 
   double activation({
     required Perceptron perceptron,

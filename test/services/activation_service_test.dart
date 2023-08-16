@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:neural_network_skeleton/models/perceptron.dart';
 import 'package:neural_network_skeleton/models/weight_web.dart';
 import 'package:neural_network_skeleton/services/activation_service.dart';
-import 'package:neural_network_skeleton/services/normalization/normalization_service.dart';
+import 'package:neural_network_skeleton/services/output_normalization/output_normalization_service.dart';
 
 void main() {
   late ActivationService testObject;
@@ -275,7 +275,7 @@ void main() {
   });
 }
 
-class FakeNormalizationService extends NormalizationService {
+class FakeNormalizationService extends OutputNormalizationService {
   @override
   normalizeValue({required double value}) {
     return value;

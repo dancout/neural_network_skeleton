@@ -1,9 +1,10 @@
 library neural_network_skeleton;
 
+import 'package:equatable/equatable.dart';
 import 'package:neural_network_skeleton/models/perceptron.dart';
 import 'package:neural_network_skeleton/models/perceptron_layer.dart';
 import 'package:neural_network_skeleton/models/weight_web.dart';
-import 'package:neural_network_skeleton/src/neural_network.dart';
+import 'package:neural_network_skeleton/services/guess_service.dart';
 
 // TODO: Clean this file up!
 
@@ -158,4 +159,30 @@ class ExampleNeuralNetwork {
       inputs: inputs,
     );
   }
+}
+
+/// Represents a NueralNetwork that can generate guesses based on given inputs.
+class NeuralNetwork extends Equatable {
+  NeuralNetwork({
+    required this.layers,
+    GuessService? guessService,
+  }) : guessService = guessService ?? GuessService();
+
+  final List<PerceptronLayer> layers;
+  final GuessService guessService;
+
+  List<double> guess({
+    required List<double> inputs,
+  }) {
+    return guessService.guess(
+      inputs: inputs,
+      layers: layers,
+    );
+  }
+
+  @override
+  List<Object?> get props => [
+        layers,
+        guessService,
+      ];
 }

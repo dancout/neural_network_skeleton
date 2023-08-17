@@ -5,51 +5,6 @@ import 'package:neural_network_skeleton/neural_network_skeleton.dart';
 import 'mocks.dart';
 
 void main() {
-  test('xor test', () {
-    final neuralNetwork = ExampleNeuralNetwork();
-
-    expect(neuralNetwork.run(inputs: [0, 0]), [0.0]);
-    expect(neuralNetwork.run(inputs: [1, 0]), [1.0]);
-    expect(neuralNetwork.run(inputs: [0, 1]), [1.0]);
-    expect(neuralNetwork.run(inputs: [1, 1]), [0.0]);
-  });
-
-  test('or test', () async {
-    final neuralNetwork = ExampleNeuralNetwork();
-
-    expect(neuralNetwork.orTest(inputs: [0, 0]), [0.0]);
-    expect(neuralNetwork.orTest(inputs: [1, 0]), [1.0]);
-    expect(neuralNetwork.orTest(inputs: [0, 1]), [1.0]);
-    expect(neuralNetwork.orTest(inputs: [1, 1]), [1.0]);
-  });
-
-  test('and test', () async {
-    final neuralNetwork = ExampleNeuralNetwork();
-
-    expect(neuralNetwork.andTest(inputs: [0, 0]), [0.0]);
-    expect(neuralNetwork.andTest(inputs: [1, 0]), [0.0]);
-    expect(neuralNetwork.andTest(inputs: [0, 1]), [0.0]);
-    expect(neuralNetwork.andTest(inputs: [1, 1]), [1.0]);
-  });
-
-  test('passthrough test', () async {
-    final neuralNetwork = ExampleNeuralNetwork();
-
-    expect(neuralNetwork.passthroughTest(inputs: [0, 0]), [0.0]);
-    expect(neuralNetwork.passthroughTest(inputs: [1, 0]), [1.0]);
-    expect(neuralNetwork.passthroughTest(inputs: [0, 1]), [0.0]);
-    expect(neuralNetwork.passthroughTest(inputs: [1, 1]), [1.0]);
-  });
-
-  test('not test', () async {
-    final neuralNetwork = ExampleNeuralNetwork();
-
-    expect(neuralNetwork.notTest(inputs: [0, 0]), [1.0]);
-    expect(neuralNetwork.notTest(inputs: [1, 0]), [1.0]);
-    expect(neuralNetwork.notTest(inputs: [0, 1]), [0.0]);
-    expect(neuralNetwork.notTest(inputs: [1, 1]), [0.0]);
-  });
-
   group('NeuralNetwork', () {
     final layers = [
       const PerceptronLayer(
@@ -74,6 +29,106 @@ void main() {
         layers: layers,
         guessService: mockGuessService,
       );
+    });
+
+    group('logical perceptrons', () {
+      test('or test', () {
+        const orPerceptron = Perceptron(
+          bias: 0.0,
+          threshold: 1.0,
+          weightWeb: WeightWeb(weights: [1.0, 1.0]),
+        );
+
+        final neuralNetwork = NeuralNetwork(
+          layers: const [
+            PerceptronLayer(
+              perceptrons: [
+                orPerceptron,
+              ],
+            )
+          ],
+        );
+
+        expect(neuralNetwork.guess(inputs: [0, 0]), [0.0]);
+        expect(neuralNetwork.guess(inputs: [1, 0]), [1.0]);
+        expect(neuralNetwork.guess(inputs: [0, 1]), [1.0]);
+        expect(neuralNetwork.guess(inputs: [1, 1]), [1.0]);
+      });
+
+      test('and test', () async {
+        const andPerceptron = Perceptron(
+          bias: 0.0,
+          threshold: 1.0,
+          weightWeb: WeightWeb(
+            weights: [0.5, 0.5],
+          ),
+        );
+
+        final neuralNetwork = NeuralNetwork(
+          layers: const [
+            PerceptronLayer(
+              perceptrons: [
+                andPerceptron,
+              ],
+            )
+          ],
+        );
+
+        expect(neuralNetwork.guess(inputs: [0, 0]), [0.0]);
+        expect(neuralNetwork.guess(inputs: [1, 0]), [0.0]);
+        expect(neuralNetwork.guess(inputs: [0, 1]), [0.0]);
+        expect(neuralNetwork.guess(inputs: [1, 1]), [1.0]);
+      });
+
+      test('xor test', () async {
+        const orPerceptron = Perceptron(
+          bias: 0.0,
+          threshold: 1.0,
+          weightWeb: WeightWeb(weights: [1.0, 1.0]),
+        );
+        const andPerceptron = Perceptron(
+          bias: 0.0,
+          threshold: 1.0,
+          weightWeb: WeightWeb(
+            weights: [0.5, 0.5],
+          ),
+        );
+        const notPerceptron = Perceptron(
+          bias: 1.0,
+          threshold: 0.0,
+          weightWeb: WeightWeb(weights: [0.0, -1.0]),
+        );
+        const passthroughPerceptron = Perceptron(
+          bias: 0.0,
+          threshold: 0.0, // Sigmoid prevents 1.0
+          weightWeb: WeightWeb(weights: [1.0, 0.0]),
+        );
+
+        final neuralNetwork = NeuralNetwork(layers: const [
+          PerceptronLayer(
+            perceptrons: [
+              orPerceptron,
+              andPerceptron,
+            ],
+          ),
+          PerceptronLayer(
+            perceptrons: [
+              passthroughPerceptron,
+              notPerceptron,
+            ],
+          ),
+          PerceptronLayer(
+            perceptrons: [
+              andPerceptron,
+            ],
+          ),
+        ]);
+
+        expect(neuralNetwork.guess(inputs: [0, 0]), [0.0]);
+        expect(neuralNetwork.guess(inputs: [1, 0]), [1.0]);
+        expect(neuralNetwork.guess(inputs: [0, 1]), [1.0]);
+        expect(neuralNetwork.guess(inputs: [1, 1]), [0.0]);
+      });
     });
 
     group('guess', () {

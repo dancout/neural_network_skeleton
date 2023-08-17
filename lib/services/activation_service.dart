@@ -20,7 +20,6 @@ class ActivationService {
     required Perceptron perceptron,
     required List<double> layerInputs,
   }) {
-    // TODO: Write test on this assert
     assert(perceptron.weights.length == layerInputs.length);
 
     final weightedInputs = <double>[];

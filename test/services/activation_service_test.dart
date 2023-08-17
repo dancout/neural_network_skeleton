@@ -11,6 +11,24 @@ void main() {
   });
 
   group('activitaion', () {
+    test(
+        'throws assert error if weights length does not match layerInputs length',
+        () async {
+      const perceptron = Perceptron(
+        bias: 0.0,
+        threshold: 0.0,
+        weights: [1.0], // 1 value
+      );
+
+      const layerInputs = [1.0, 1.0]; // 2 values
+      expect(
+        () => testObject.activation(
+          perceptron: perceptron,
+          layerInputs: layerInputs,
+        ),
+        throwsAssertionError,
+      );
+    });
     test('returns 0 if threshold is not met', () async {
       const input = 0.5;
       const bias = 0.1;

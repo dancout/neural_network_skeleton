@@ -4,7 +4,6 @@ import 'package:equatable/equatable.dart';
 
 part 'package:neural_network_skeleton/models/perceptron.dart';
 part 'package:neural_network_skeleton/models/perceptron_layer.dart';
-part 'package:neural_network_skeleton/models/weight_web.dart';
 part 'package:neural_network_skeleton/services/activation_service.dart';
 part 'package:neural_network_skeleton/services/guess_service.dart';
 part 'package:neural_network_skeleton/services/output_normalization/clamping_output_normalization_service.dart';

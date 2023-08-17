@@ -21,12 +21,12 @@ class ActivationService {
     required List<double> layerInputs,
   }) {
     // TODO: Write test on this assert
-    assert(perceptron.weightWeb.weights.length == layerInputs.length);
+    assert(perceptron.weights.length == layerInputs.length);
 
     final weightedInputs = <double>[];
 
-    for (int i = 0; i < perceptron.weightWeb.weights.length; i++) {
-      final weightedInput = perceptron.weightWeb.weights[i] * layerInputs[i];
+    for (int i = 0; i < perceptron.weights.length; i++) {
+      final weightedInput = perceptron.weights[i] * layerInputs[i];
       weightedInputs.add(weightedInput);
     }
 

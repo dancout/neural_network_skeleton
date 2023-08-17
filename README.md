@@ -6,7 +6,7 @@ This package contains the components necessary to build a fully connected Neural
 const orPerceptron = Perceptron(
   bias: 0.0,
   threshold: 1.0,
-  weightWeb: WeightWeb(weights: [1.0, 1.0]),
+  weights: [1.0, 1.0],
 );
 
 final neuralNetwork = NeuralNetwork(

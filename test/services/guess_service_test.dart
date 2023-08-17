@@ -27,9 +27,7 @@ void main() {
         const perceptron = Perceptron(
           bias: 0.1,
           threshold: 0.1,
-          weightWeb: WeightWeb(
-            weights: [0.1, 0.1, 0.1],
-          ),
+          weights: [0.1, 0.1, 0.1],
         );
 
         when(
@@ -68,9 +66,7 @@ void main() {
           const perceptron = Perceptron(
             bias: 0.1,
             threshold: 0.1,
-            weightWeb: WeightWeb(
-              weights: [0.1, 0.1, 0.1],
-            ),
+            weights: [0.1, 0.1, 0.1],
           );
 
           const perceptronLayer = PerceptronLayer(

@@ -7,9 +7,7 @@ class TestUtils {
       const Perceptron(
         bias: 0.1,
         threshold: 0.1,
-        weightWeb: WeightWeb(
-          weights: [0.1],
-        ),
+        weights: [0.1],
       ),
     );
   }

@@ -34,7 +34,7 @@ class MyHomePage extends StatelessWidget {
     const orPerceptron = Perceptron(
       bias: 0.0,
       threshold: 1.0,
-      weightWeb: WeightWeb(weights: [1.0, 1.0]),
+      weights: [1.0, 1.0],
     );
 
     final orNeuralNetwork = NeuralNetwork(
@@ -59,9 +59,7 @@ class MyHomePage extends StatelessWidget {
     const andPerceptron = Perceptron(
       bias: 0.0,
       threshold: 1.0,
-      weightWeb: WeightWeb(
-        weights: [0.5, 0.5],
-      ),
+      weights: [0.5, 0.5],
     );
 
     final andNeuralNetwork = NeuralNetwork(
@@ -87,12 +85,12 @@ class MyHomePage extends StatelessWidget {
     const notPerceptron = Perceptron(
       bias: 1.0,
       threshold: 0.0,
-      weightWeb: WeightWeb(weights: [0.0, -1.0]),
+      weights: [0.0, -1.0],
     );
     const passthroughPerceptron = Perceptron(
       bias: 0.0,
       threshold: 0.0, // Sigmoid prevents 1.0
-      weightWeb: WeightWeb(weights: [1.0, 0.0]),
+      weights: [1.0, 0.0],
     );
 
     final xorNeuralNetwork = NeuralNetwork(layers: const [

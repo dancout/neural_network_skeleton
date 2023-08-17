@@ -5,7 +5,7 @@ class Perceptron extends Equatable {
   const Perceptron({
     required this.bias,
     required this.threshold,
-    required this.weightWeb,
+    required this.weights,
   });
 
   /// The value added to the internal activation function.
@@ -21,12 +21,12 @@ class Perceptron extends Equatable {
 
   /// The collection of weights to be multiplied against the collection of
   /// inputs coming into this [Perceptron].
-  final WeightWeb weightWeb;
+  final List<double> weights;
 
   @override
   List<Object?> get props => [
         bias,
         threshold,
-        weightWeb,
+        weights,
       ];
 }

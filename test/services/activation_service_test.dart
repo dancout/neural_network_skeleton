@@ -19,9 +19,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: [weight],
-        ),
+        weights: [weight],
       );
       const layerInputs = [input];
 
@@ -43,9 +41,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: [weight],
-        ),
+        weights: [weight],
       );
       const layerInputs = [input];
 
@@ -69,9 +65,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -93,9 +87,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -117,9 +109,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -141,9 +131,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -165,9 +153,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -191,9 +177,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -213,9 +197,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -244,9 +226,7 @@ void main() {
         final perceptron = Perceptron(
           bias: bias,
           threshold: threshold,
-          weightWeb: WeightWeb(
-            weights: weights,
-          ),
+          weights: weights,
         );
         const layerInputs = inputs;
 

@@ -1,4 +1,4 @@
-import 'package:neural_network_skeleton/services/output_normalization/output_normalization_service.dart';
+part of 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 /// Used to ensure output values for a [Perceptron] remain between 0.0 and 1.0,
 /// inclusively.

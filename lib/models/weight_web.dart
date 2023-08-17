@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 /// The collection of weights to be multiplied against the collection of
 /// inputs coming into a [Perceptron].

@@ -1,10 +1,14 @@
 library neural_network_skeleton;
 
 import 'package:equatable/equatable.dart';
-import 'package:neural_network_skeleton/models/perceptron.dart';
-import 'package:neural_network_skeleton/models/perceptron_layer.dart';
-import 'package:neural_network_skeleton/models/weight_web.dart';
-import 'package:neural_network_skeleton/services/guess_service.dart';
+
+part 'package:neural_network_skeleton/models/perceptron.dart';
+part 'package:neural_network_skeleton/models/perceptron_layer.dart';
+part 'package:neural_network_skeleton/models/weight_web.dart';
+part 'package:neural_network_skeleton/services/activation_service.dart';
+part 'package:neural_network_skeleton/services/guess_service.dart';
+part 'package:neural_network_skeleton/services/output_normalization/clamping_output_normalization_service.dart';
+part 'package:neural_network_skeleton/services/output_normalization/output_normalization_service.dart';
 
 // TODO: Clean this file up!
 

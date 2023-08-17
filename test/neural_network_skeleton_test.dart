@@ -1,10 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:neural_network_skeleton/models/perceptron.dart';
-import 'package:neural_network_skeleton/models/perceptron_layer.dart';
-import 'package:neural_network_skeleton/models/weight_web.dart';
 import 'package:neural_network_skeleton/neural_network_skeleton.dart';
-import 'package:neural_network_skeleton/services/guess_service.dart';
 
 import 'mocks.dart';
 

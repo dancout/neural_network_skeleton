@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:neural_network_skeleton/models/weight_web.dart';
+part of 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 /// Represents a single [Perceptron] Node within a [NeuralNetwork].
 class Perceptron extends Equatable {

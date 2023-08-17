@@ -1,6 +1,4 @@
-import 'package:neural_network_skeleton/models/perceptron.dart';
-import 'package:neural_network_skeleton/services/output_normalization/clamping_output_normalization_service.dart';
-import 'package:neural_network_skeleton/services/output_normalization/output_normalization_service.dart';
+part of 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 /// Used to generate the output for a [Perceptron].
 class ActivationService {

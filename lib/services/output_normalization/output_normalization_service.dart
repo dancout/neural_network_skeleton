@@ -1,3 +1,5 @@
+part of 'package:neural_network_skeleton/neural_network_skeleton.dart';
+
 /// Used to normalize output data from a [Perceptron].
 ///
 /// This may be necessary if your algorithm requires all values to be within a

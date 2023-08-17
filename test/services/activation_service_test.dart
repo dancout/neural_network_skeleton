@@ -1,8 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:neural_network_skeleton/models/perceptron.dart';
-import 'package:neural_network_skeleton/models/weight_web.dart';
-import 'package:neural_network_skeleton/services/activation_service.dart';
-import 'package:neural_network_skeleton/services/output_normalization/output_normalization_service.dart';
+import 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 void main() {
   late ActivationService testObject;

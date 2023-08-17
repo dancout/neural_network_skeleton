@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:neural_network_skeleton/models/perceptron.dart';
+part of 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 /// The collection of [Perceptron] objects within a single layer of a
 /// [NeuralNetwork].

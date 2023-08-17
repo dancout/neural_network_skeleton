@@ -1,5 +1,4 @@
-import 'package:neural_network_skeleton/models/perceptron_layer.dart';
-import 'package:neural_network_skeleton/services/activation_service.dart';
+part of 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 /// Used to generate guesses on a [NueralNetwork].
 class GuessService {

@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
 import 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
@@ -23,12 +21,14 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<List<double>> inputsList = [
+    List<List<double>> logicalInputsList = [
       [0.0, 0.0],
       [1.0, 0.0],
       [0.0, 1.0],
       [1.0, 1.0],
     ];
+
+    final List<Widget> textRows = [];
 
     // ============ LOGICAL OR NEURAL NETWORK ==================================
     const orPerceptron = Perceptron(
@@ -47,13 +47,12 @@ class MyHomePage extends StatelessWidget {
       ],
     );
 
-    print('\n');
-    print('===== Logical OR =====');
-    print('  Inputs   | Outputs');
-    for (List<double> inputs in inputsList) {
+    textRows.add(const Text('===== Logical OR ====='));
+    textRows.add(const Text('    Inputs       Outputs'));
+    for (List<double> inputs in logicalInputsList) {
       final output = orNeuralNetwork.guess(inputs: inputs);
 
-      print('$inputs |  $output');
+      textRows.add(Text('$inputs        $output'));
     }
 
     // ============ LOGICAL AND NEURAL NETWORK =================================
@@ -75,13 +74,13 @@ class MyHomePage extends StatelessWidget {
       ],
     );
 
-    print('\n');
-    print('===== Logical AND =====');
-    print('  Inputs   | Outputs');
-    for (List<double> inputs in inputsList) {
+    textRows.add(const SizedBox(height: 24));
+    textRows.add(const Text('===== Logical AND ====='));
+    textRows.add(const Text('    Inputs       Outputs'));
+    for (List<double> inputs in logicalInputsList) {
       final output = andNeuralNetwork.guess(inputs: inputs);
 
-      print('$inputs |  $output');
+      textRows.add(Text('$inputs        $output'));
     }
 
     // ============ LOGICAL XOR NEURAL NETWORK =================================
@@ -116,18 +115,21 @@ class MyHomePage extends StatelessWidget {
       ),
     ]);
 
-    print('\n');
-    print('===== Logical XOR =====');
-    print('  Inputs   | Outputs');
-    for (List<double> inputs in inputsList) {
+    textRows.add(const SizedBox(height: 24));
+    textRows.add(const Text('===== Logical XOR ====='));
+    textRows.add(const Text('    Inputs       Outputs'));
+    for (List<double> inputs in logicalInputsList) {
       final output = xorNeuralNetwork.guess(inputs: inputs);
 
-      print('$inputs |  $output');
+      textRows.add(Text('$inputs        $output'));
     }
 
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('Check your print statements'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: textRows,
+        ),
       ),
     );
   }

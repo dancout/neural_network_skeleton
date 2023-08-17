@@ -26,6 +26,6 @@ neuralNetwork.guess(inputs: [1.0, 1.0]); // [1.0]
 ```
 
 #### Logical AND & Logical XOR
-Check the [example](https://github.com/dancout/nerual_network_skeleton/tree/main/example) folder
+Check the [example](https://github.com/dancout/neural_network_skeleton/blob/main/example/lib/main.dart) file
 
 <img src="https://github.com/dancout/neural_network_skeleton/assets/5490028/7e4d06f2-1ec3-44c0-a7a4-4a866d0c3519" width="400">

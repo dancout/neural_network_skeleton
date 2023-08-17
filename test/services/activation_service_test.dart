@@ -1,8 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:neural_network_skeleton/models/perceptron.dart';
-import 'package:neural_network_skeleton/models/weight_web.dart';
-import 'package:neural_network_skeleton/services/activation_service.dart';
-import 'package:neural_network_skeleton/services/output_normalization/output_normalization_service.dart';
+import 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 void main() {
   late ActivationService testObject;
@@ -14,6 +11,24 @@ void main() {
   });
 
   group('activitaion', () {
+    test(
+        'throws assert error if weights length does not match layerInputs length',
+        () async {
+      const perceptron = Perceptron(
+        bias: 0.0,
+        threshold: 0.0,
+        weights: [1.0], // 1 value
+      );
+
+      const layerInputs = [1.0, 1.0]; // 2 values
+      expect(
+        () => testObject.activation(
+          perceptron: perceptron,
+          layerInputs: layerInputs,
+        ),
+        throwsAssertionError,
+      );
+    });
     test('returns 0 if threshold is not met', () async {
       const input = 0.5;
       const bias = 0.1;
@@ -22,9 +37,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: [weight],
-        ),
+        weights: [weight],
       );
       const layerInputs = [input];
 
@@ -46,9 +59,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: [weight],
-        ),
+        weights: [weight],
       );
       const layerInputs = [input];
 
@@ -72,9 +83,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -96,9 +105,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -120,9 +127,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -144,9 +149,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -168,9 +171,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -194,9 +195,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -216,9 +215,7 @@ void main() {
       const perceptron = Perceptron(
         bias: bias,
         threshold: threshold,
-        weightWeb: WeightWeb(
-          weights: weights,
-        ),
+        weights: weights,
       );
       const layerInputs = inputs;
 
@@ -247,9 +244,7 @@ void main() {
         final perceptron = Perceptron(
           bias: bias,
           threshold: threshold,
-          weightWeb: WeightWeb(
-            weights: weights,
-          ),
+          weights: weights,
         );
         const layerInputs = inputs;
 

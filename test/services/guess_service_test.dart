@@ -1,10 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:neural_network_skeleton/models/perceptron.dart';
-import 'package:neural_network_skeleton/models/perceptron_layer.dart';
-import 'package:neural_network_skeleton/models/weight_web.dart';
-import 'package:neural_network_skeleton/services/activation_service.dart';
-import 'package:neural_network_skeleton/services/guess_service.dart';
+import 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 import '../mocks.dart';
 import '../test_utils.dart';
@@ -31,9 +27,7 @@ void main() {
         const perceptron = Perceptron(
           bias: 0.1,
           threshold: 0.1,
-          weightWeb: WeightWeb(
-            weights: [0.1, 0.1, 0.1],
-          ),
+          weights: [0.1, 0.1, 0.1],
         );
 
         when(
@@ -72,9 +66,7 @@ void main() {
           const perceptron = Perceptron(
             bias: 0.1,
             threshold: 0.1,
-            weightWeb: WeightWeb(
-              weights: [0.1, 0.1, 0.1],
-            ),
+            weights: [0.1, 0.1, 0.1],
           );
 
           const perceptronLayer = PerceptronLayer(

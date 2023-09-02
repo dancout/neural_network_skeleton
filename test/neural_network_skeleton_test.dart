@@ -7,8 +7,8 @@ import 'mocks.dart';
 void main() {
   group('NeuralNetwork', () {
     final layers = [
-      const PerceptronLayer(
-        perceptrons: [
+      PerceptronLayer(
+        perceptrons: const [
           Perceptron(
             bias: 0.1,
             threshold: 0.1,
@@ -38,9 +38,9 @@ void main() {
         );
 
         final neuralNetwork = NeuralNetwork(
-          layers: const [
+          layers: [
             PerceptronLayer(
-              perceptrons: [
+              perceptrons: const [
                 orPerceptron,
               ],
             )
@@ -61,9 +61,9 @@ void main() {
         );
 
         final neuralNetwork = NeuralNetwork(
-          layers: const [
+          layers: [
             PerceptronLayer(
-              perceptrons: [
+              perceptrons: const [
                 andPerceptron,
               ],
             )
@@ -98,21 +98,21 @@ void main() {
           weights: [1.0, 0.0],
         );
 
-        final neuralNetwork = NeuralNetwork(layers: const [
+        final neuralNetwork = NeuralNetwork(layers: [
           PerceptronLayer(
-            perceptrons: [
+            perceptrons: const [
               orPerceptron,
               andPerceptron,
             ],
           ),
           PerceptronLayer(
-            perceptrons: [
+            perceptrons: const [
               passthroughPerceptron,
               notPerceptron,
             ],
           ),
           PerceptronLayer(
-            perceptrons: [
+            perceptrons: const [
               andPerceptron,
             ],
           ),

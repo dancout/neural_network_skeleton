@@ -38,9 +38,9 @@ class MyHomePage extends StatelessWidget {
     );
 
     final orNeuralNetwork = NeuralNetwork(
-      layers: const [
+      layers: [
         PerceptronLayer(
-          perceptrons: [
+          perceptrons: const [
             orPerceptron,
           ],
         )
@@ -63,9 +63,9 @@ class MyHomePage extends StatelessWidget {
     );
 
     final andNeuralNetwork = NeuralNetwork(
-      layers: const [
+      layers: [
         PerceptronLayer(
-          perceptrons: [
+          perceptrons: const [
             andPerceptron,
           ],
         )
@@ -93,21 +93,21 @@ class MyHomePage extends StatelessWidget {
       weights: [1.0, 0.0],
     );
 
-    final xorNeuralNetwork = NeuralNetwork(layers: const [
+    final xorNeuralNetwork = NeuralNetwork(layers: [
       PerceptronLayer(
-        perceptrons: [
+        perceptrons: const [
           orPerceptron,
           andPerceptron,
         ],
       ),
       PerceptronLayer(
-        perceptrons: [
+        perceptrons: const [
           passthroughPerceptron,
           notPerceptron,
         ],
       ),
       PerceptronLayer(
-        perceptrons: [
+        perceptrons: const [
           andPerceptron,
         ],
       ),

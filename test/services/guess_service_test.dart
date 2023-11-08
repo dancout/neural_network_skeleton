@@ -38,8 +38,8 @@ void main() {
         ).thenReturn(output);
 
         final List<PerceptronLayer> layers = [
-          const PerceptronLayer(
-            perceptrons: [
+          PerceptronLayer(
+            perceptrons: const [
               perceptron,
             ],
           ),
@@ -69,8 +69,8 @@ void main() {
             weights: [0.1, 0.1, 0.1],
           );
 
-          const perceptronLayer = PerceptronLayer(
-            perceptrons: [
+          final perceptronLayer = PerceptronLayer(
+            perceptrons: const [
               perceptron,
               perceptron,
               perceptron,

@@ -15,13 +15,11 @@ class PerceptronLayer extends Equatable {
   /// The collection of [Perceptron] objects within a [PerceptronLayer].
   final List<Perceptron> perceptrons;
 
+  /// The number of [Perceptron] objects within this [PerceptronLayer].
+  int get numPerceptrons => perceptrons.length;
+
   @override
   List<Object?> get props => [
         perceptrons,
       ];
-}
-
-extension LayerExtension on PerceptronLayer {
-  /// The number of [Perceptron] objects within this [PerceptronLayer].
-  int get numPerceptrons => perceptrons.length;
 }

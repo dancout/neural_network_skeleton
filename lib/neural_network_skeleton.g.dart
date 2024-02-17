@@ -1,0 +1,22 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'neural_network_skeleton.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+Perceptron _$PerceptronFromJson(Map<String, dynamic> json) => Perceptron(
+      bias: (json['bias'] as num).toDouble(),
+      threshold: (json['threshold'] as num).toDouble(),
+      weights: (json['weights'] as List<dynamic>)
+          .map((e) => (e as num).toDouble())
+          .toList(),
+    );
+
+Map<String, dynamic> _$PerceptronToJson(Perceptron instance) =>
+    <String, dynamic>{
+      'bias': instance.bias,
+      'threshold': instance.threshold,
+      'weights': instance.weights,
+    };

@@ -1,6 +1,7 @@
 part of 'package:neural_network_skeleton/neural_network_skeleton.dart';
 
 /// Represents a single [Perceptron] Node within a [NeuralNetwork].
+@JsonSerializable()
 class Perceptron extends Equatable {
   const Perceptron({
     required this.bias,
@@ -29,4 +30,11 @@ class Perceptron extends Equatable {
         threshold,
         weights,
       ];
+
+  /// Converts the input [json] into a [Perceptron] object.
+  factory Perceptron.fromJson(Map<String, dynamic> json) =>
+      _$PerceptronFromJson(json);
+
+  /// Converts the [Perceptron] object to JSON.
+  Map<String, dynamic> toJson() => _$PerceptronToJson(this);
 }

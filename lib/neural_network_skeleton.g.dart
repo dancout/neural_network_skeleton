@@ -20,3 +20,15 @@ Map<String, dynamic> _$PerceptronToJson(Perceptron instance) =>
       'threshold': instance.threshold,
       'weights': instance.weights,
     };
+
+PerceptronLayer _$PerceptronLayerFromJson(Map<String, dynamic> json) =>
+    PerceptronLayer(
+      perceptrons: (json['perceptrons'] as List<dynamic>)
+          .map((e) => Perceptron.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PerceptronLayerToJson(PerceptronLayer instance) =>
+    <String, dynamic>{
+      'perceptrons': instance.perceptrons,
+    };

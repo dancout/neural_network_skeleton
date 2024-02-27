@@ -1,3 +1,7 @@
+## 0.2.0
+
+* Implemented to and from JSON on models
+
 ## 0.1.2
 
 * Exposed `numPerceptrons` on `PerceptronLayer` to be more extensible

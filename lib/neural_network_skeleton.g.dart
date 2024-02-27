@@ -11,13 +11,13 @@ NeuralNetwork _$NeuralNetworkFromJson(Map<String, dynamic> json) =>
       layers: (json['layers'] as List<dynamic>)
           .map((e) => PerceptronLayer.fromJson(e as Map<String, dynamic>))
           .toList(),
-      guessService: NeuralNetwork._guessServiceFromJson(json['guessService']),
+      guessService: NeuralNetwork.guessServiceFromJson(json['guessService']),
     );
 
 Map<String, dynamic> _$NeuralNetworkToJson(NeuralNetwork instance) =>
     <String, dynamic>{
       'layers': instance.layers,
-      'guessService': NeuralNetwork._guessServiceToJson(instance.guessService),
+      'guessService': NeuralNetwork.guessServiceToJson(instance.guessService),
     };
 
 Perceptron _$PerceptronFromJson(Map<String, dynamic> json) => Perceptron(

@@ -24,8 +24,8 @@ class NeuralNetwork extends Equatable {
   /// The collection of [PerceptronLayers] that make up this [NeuralNetwork].
   final List<PerceptronLayer> layers;
   @JsonKey(
-    toJson: _guessServiceToJson,
-    fromJson: _guessServiceFromJson,
+    toJson: guessServiceToJson,
+    fromJson: guessServiceFromJson,
   )
   final GuessService guessService;
 
@@ -56,6 +56,6 @@ class NeuralNetwork extends Equatable {
   Map<String, dynamic> toJson() => _$NeuralNetworkToJson(this);
 
   // TODO: Consider building out a way to parse GuessService, if possible.
-  static _guessServiceToJson(GuessService guessService) => null;
-  static _guessServiceFromJson(dynamic guessService) => null;
+  static guessServiceToJson(GuessService guessService) => null;
+  static guessServiceFromJson(dynamic guessService) => null;
 }

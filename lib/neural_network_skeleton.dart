@@ -2,6 +2,7 @@ library neural_network_skeleton;
 
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:ml_linalg/vector.dart';
 
 part 'neural_network_skeleton.g.dart';
 part 'package:neural_network_skeleton/models/perceptron.dart';

@@ -14,6 +14,8 @@ dependencies:
   json_annotation: ^4.8.1
   json_serializable: ^6.7.1
   path_provider: ^2.1.2
+  ml_linalg: ^13.12.6
+
 
 dev_dependencies:
   flutter_lints: ^3.0.1

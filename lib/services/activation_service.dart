@@ -22,22 +22,16 @@ class ActivationService {
   }) {
     assert(perceptron.weights.length == layerInputs.length);
 
-    final weightedInputs = <double>[];
-
-    for (int i = 0; i < perceptron.weights.length; i++) {
-      final weightedInput = perceptron.weights[i] * layerInputs[i];
-      weightedInputs.add(weightedInput);
-    }
-
-    final weightedInputsSum =
-        weightedInputs.reduce((value, element) => value + element);
-
-    final weightedInputSumAndBias = _normalizationService.normalizeValue(
+    final weightsVector = Vector.fromList(perceptron.weights);
+    final inputsVector = Vector.fromList(layerInputs);
+    final weightedInputsSum = weightsVector.dot(inputsVector);
+    final normalizedWeightedInputSumAndBias =
+        _normalizationService.normalizeValue(
       value: weightedInputsSum + perceptron.bias,
     );
 
-    if (weightedInputSumAndBias >= perceptron.threshold) {
-      return weightedInputSumAndBias;
+    if (normalizedWeightedInputSumAndBias >= perceptron.threshold) {
+      return normalizedWeightedInputSumAndBias;
     } else {
       return 0.0;
     }

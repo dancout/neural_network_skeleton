@@ -14,8 +14,7 @@ dependencies:
   json_annotation: ^4.8.1
   json_serializable: ^6.7.1
   path_provider: ^2.1.2
-  ml_linalg: ^13.12.6
-
+  matrix_utils: ^0.1.8 # Total time: 0:00:01.212621
 
 dev_dependencies:
   flutter_lints: ^3.0.1
